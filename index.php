@@ -7,6 +7,7 @@
   article { display: block; text-align: left; width: 650px; margin: 0 auto; }
   a { color: #dc8100; text-decoration: none; }
   a:hover { color: #333; text-decoration: none; }
+  .code{background:#f4f4f4;padding:10px;}
 </style>
 
 <article>
@@ -14,5 +15,20 @@
     <div>
         <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:#">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
         <p>&mdash; The Team</p>
+        <p class="code">
+            <?php 
+                #echo " | REMOTE_ADDR:";
+                #print_r($_SERVER['REMOTE_ADDR']);
+                #echo " | HTTP_CF_CONNECTING_IP:";
+                #print_r($_SERVER["HTTP_CF_CONNECTING_IP"]);
+                #echo " | HTTP_X_FORWARDED_FOR:";
+                print_r($_SERVER["HTTP_X_FORWARDED_FOR"]);
+                #echo " | HTTP_X_FORWARDED:";
+                #print_r($_SERVER["HTTP_X_FORWARDED"]);
+                #print_r($_SERVER);
+            ?>
+        </p>
     </div>
 </article>
+
+
